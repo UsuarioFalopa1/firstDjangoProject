@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome</title>
+    </head>
+<body>
+    <h1>Welcome baby</h1>
+    <div>
+       person number : {{person_numb}}
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>email</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in persons %}
+                <tr> 
+                    <td>{{person.id}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.surname}}</td>
+                    <td>{{person.email}}</td>
+                    <td><a href="person_details/{{person.id}}">Details</a></td>
+                    <td><a href="person_edit/{{person.id}}">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="new_person">Add new person</a>
+    </div>
+</body>
+</html>
